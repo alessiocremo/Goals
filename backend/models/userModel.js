@@ -1,7 +1,7 @@
-const mongoose = require('mongoose')
-const { stringify } = require('qs')
+const mongoose = require('mongoose');
 
-const userScherma = mongoose.Schema ({
+
+const userSchema = mongoose.Schema ({
     name:{
         type: String,
         required: [true, 'Please add a aname']
@@ -15,5 +15,8 @@ const userScherma = mongoose.Schema ({
         required: [true, 'Please, add a password']
     }
 }, {
-    timestamp: true
+    timestamps: true
 })
+
+
+module.exports = mongoose.model('User', userSchema);
